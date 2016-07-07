@@ -1,5 +1,6 @@
 // http
 var http = require("http");
+var fs = require('fs');
 // Obteniendo información del entorno
 // De ejecución con respecto al IP
 // y al puerto que debemos usar en
@@ -14,13 +15,18 @@ var server = http.createServer(function(req, res){
     // Armar la respuesta http
     // Armar un encabezado http
     res.writeHead(200,{
-        "Content-Type" : "text/plain",
+        "Content-Type" : "text/html",
         "Server" : "ITGAM@4.2.4"
+    });    
+    // lectura del archivo a servir
+    fs.readFile('./static/index.html',
+    'utf8',function(err, content){
+        if(err){
+            res.end("<h1>ERROR DE LECTURA</h1>");                      
+        }else{
+            res.end(content);
+        }
     });
-    // Enviamos la respuesta
-    res.write("Ivan Rivalcoba Server");
-    // Cerrar la conexion
-    res.end();
 });
 // Poner a trabjar al server
 server.listen(PORT,IP,function(){
