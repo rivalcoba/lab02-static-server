@@ -3,6 +3,7 @@ var http = require("http");
 var fs = require('fs');
 var config = require("./config/config.js");
 var staticServer = require('./internals/static-server');
+var colors = require("colors");
 // Obteniendo las configuraciones
 // del modulo de configuracion
 var PORT = config.PORT;

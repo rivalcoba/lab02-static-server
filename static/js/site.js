@@ -1,10 +1,12 @@
 function hola(){
-    alert("Bienvenido a esta pagina ...");
+    sweetAlert("World Places",
+    "¡Bienvenido a esta página!");
+    document.body.style.backgroundColor = "lightseagreen";
 }
 
 function changeBkgColor(){
     var color = document.body.style.backgroundColor;
-    console.log("> Color Original: " +  color);
+    console.log("> Color Original: " + color);    
     if(color == "lightseagreen"){        
         color = "honeydew";
     }else{
