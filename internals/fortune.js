@@ -6,9 +6,9 @@ module.exports = {
     "getFortune" : function(cb){
         // Convirtiendo el fortunePaper de objeto
         // a su version en string
-        fortunePaper = JSON.stringify(fortunePaper);
+        var fortunePaperResponse = JSON.stringify(fortunePaper);
         // Ejecuto el callback (cb) pasandole
         // como parametro el fortunepaper string
-        cb(fortunePaper);
+        cb(fortunePaperResponse);
     }
 };
