@@ -21,6 +21,7 @@ module.exports = {
         res.end(jsonResponse); 
     },
     "/getfortune": function(req, res){
+        console.log("> Se solicita fortuna...");
         // // Se obtiene el mensaje de la suerte
         // var fortunePaper = {
         //     "mensaje" : 
