@@ -14,7 +14,7 @@ module.exports = {
                 " la base de datos:"+
                 " mongodb://127.0.0.1:27017/fortune");
                 var fortunePaper = {
-                    "mensaje":
+                    "message":
                     "La honestidad es un regalo caro, no lo esperes de gente barata"
                 };
                 // Convirtiendo el fortunePaper de objeto
@@ -42,6 +42,7 @@ module.exports = {
                     db.close()
                     // Invoco al cb pasandole como parametro
                     // la respuesta
+                    console.log("> La fortuna es: " + fortunePaperResponse);
                     cb(fortunePaperResponse);
                 });
             }
