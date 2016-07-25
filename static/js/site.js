@@ -10,3 +10,8 @@ function getFortuneFromServer(){
         });
     },"json");
 }
+
+$(document).ready(function () {
+    $('.parallax').parallax();
+    console.log("> Paralax Initialized...");
+});

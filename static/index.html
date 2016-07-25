@@ -2,14 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Import GOOGLE ICON FONT FAMILY -->
     <link 
     rel="stylesheet" 
-    href="./vendor/sweetalert/dist/sweetalert.css">    
+    href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Import Materialize -->
+    <link rel="stylesheet" 
+    href="./vendor/materialize/bin/materialize.css">
+    <link 
+    rel="stylesheet" 
+    href="./vendor/sweetalert/dist/sweetalert.css">   
     <title>Mis lugares Favoritos</title>
 </head>
 <body>
     <!-- Contenido -->
-    <h1>Fortune Cookie</h1>
+    <div class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center grey-text">
+                    GALLETA DE LA SUERTE
+                </h1>
+                <div class="row center">
+                    <h5 class="header col s12 grey-text text-lighten-5">
+                        Tu suerte a un click...
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax">
+            <img src="img/china3.jpg">
+        </div>
+    </div>
+    <div class="section white">
+        <div class="row cener container">
+            <h2 class="header center">Rompe la Galleta para saber tu suerte...</h2>
+            <div class="center">
+                <a onclick="getFortuneFromServer()"
+                    class="waves-effect waves-light btn-large">
+                    <i class="large material-icons left">visibility</i> ROMPER
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="img/china4.jpg">
+        </div>
+    </div>
+    <!--<h1>Fortune Cookie</h1>
     <div id="title">
         <p>
             Si tu fortuna quiere saber, 
@@ -25,9 +66,10 @@
     <div id="status">
         <img src="./img/under_construction.jpg" 
         alt="En Construccion">
-    </div>    
+    </div>    -->
     <!-- Seccion de Scripts -->
-    <script src="./vendor/jquery/dist/jquery.js"></script>
+    <script src="./vendor/jquery/dist/jquery.min.js"></script>
+    <script src="./vendor/materialize/bin/materialize.js"></script>
     <script src="./vendor/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/site.js"></script>
 </body>
