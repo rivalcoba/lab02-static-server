@@ -1,7 +1,15 @@
-mongoimport --db <db-name> --collection <coll-name> --type json --file seed.json
+mongoimport 
+--db <db-name> --collection <coll-name> --type json --file seed.json
 --jsonArray
 
 TO MLab
-% mongoimport -h ds012345.mlab.com:56789 -d dbname -c collectionname -u dbuser -p dbpassword --file filename.json
+mongoimport 
+-h ds012345.mlab.com:56789 
+-d dbname 
+-c collectionname 
+-u dbuser 
+-p dbpassword 
+--file filename.json
+--jsonArray
 
 Math.floor(Math.random() * (max - min) + min)
