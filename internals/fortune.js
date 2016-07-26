@@ -35,6 +35,9 @@ module.exports = {
 
                 // Parseo el objeto resultado en un arreglo
                 objetoRestultado.toArray(function(err, papers){
+                    // Obtengo un indide aleatorio
+                    // contemplando como min = 0
+                    // Y como max = la logitud de arreglo papers
                     var randomIndex = 
                     getRandomArbitrary(0, papers.length);
                     console.log("> RandomIndex calculated: " + randomIndex);
@@ -57,5 +60,5 @@ module.exports = {
  * Returns a random number between min (inclusive) and max (exclusive)
  */
 function getRandomArbitrary(min, max) {
-    return 0;
+    return Math.floor(Math.random() * (max - min) + min);
 }
