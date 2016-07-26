@@ -1,6 +1,6 @@
 {
   "name": "lab02-static-server",
-  "version": "0.0.0",
+  "version": "0.0.9",
   "description": "Servidor Web estatico en node",
   "main": "server.js",
   "scripts": {

@@ -35,8 +35,11 @@ module.exports = {
 
                 // Parseo el objeto resultado en un arreglo
                 objetoRestultado.toArray(function(err, papers){
+                    var randomIndex = 
+                    getRandomArbitrary(0, papers.length);
+                    console.log("> RandomIndex calculated: " + randomIndex);
                     var fortunePaperResponse = 
-                    JSON.stringify(papers[0]);
+                    JSON.stringify(papers[randomIndex]);
                     // Cerrar la conexion entre el cliente
                     // y la base de datos
                     db.close()
@@ -49,3 +52,10 @@ module.exports = {
         });
     }
 };
+
+/**
+ * Returns a random number between min (inclusive) and max (exclusive)
+ */
+function getRandomArbitrary(min, max) {
+    return 0;
+}
