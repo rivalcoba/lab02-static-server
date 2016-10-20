@@ -4,6 +4,7 @@ var mongodb = require("mongodb");
 // 2. Cargo al cliente de driver
 var mongoClient = mongodb.MongoClient;
 
+
 module.exports = {
     "getFortune" : function(cb){
         // Conectando el cliente a la base de datos fortune
