@@ -57,6 +57,44 @@ module.exports = {
                 });
             }
         });
+    },
+    'getAllFortunes' : function(cb){
+        // Conectando el cliente a la base de datos fortune
+        //var connectionString = "mongodb://127.0.0.1:27017/fortune";
+        var connectionString = 
+        "mongodb://verison:itgampwm2016@ds064718.mlab.com:64718/fortune";  
+        mongoClient.connect(connectionString,
+        function(err, db){
+            if(err){
+                console.log("> ERROR al conectarse a" +
+                " la base de datos: "+
+                connectionString);
+                var fortunePaper = {
+                    "message":
+                    "La honestidad es un regalo caro, no lo esperes de gente barata"
+                };
+                // Convirtiendo el fortunePaper de objeto
+                // a su version en string
+                var fortunePaperResponse = JSON.stringify(fortunePaper);
+                
+                // Ejecuto el callback (cb) pasandole
+                // como parametro el fortunepaper string
+                cb(fortunePaperResponse);
+            }else{
+                // Obtengo la coleccion con la que quiero trabajar
+                var papersCollection = 
+                db.collection("papers");
+                
+                // Consulto todos los documentos de mi coleccion
+                var objetoRestultado = papersCollection.find({});
+
+                // Parseo el objeto resultado en un arreglo
+                objetoRestultado.toArray(function(err, papers){
+                    console.log("> Delivering all papers as an array. ");
+                    cb(papers);
+                });
+            }
+        });
     }
 };
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<nav class="light-blue lighten-1" role="navigation">
+			<div class="nav-wrapper container">
+				<a id="logo-container" href="#" class="brand-logo">Rivalcoba</a>
+				<ul class="right hide-on-med-and-down">
+					<li>
+						<a href="#">Navbar Link</a>
+					</li>
+				</ul>
+				<!-- movil -->
+				<ul id="nav-mobile" class="side-nav">
+					<li>
+						<a href="#">Navbar Link</a>
+					</li>
+				</ul>
+				<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+			</div>
+		</nav>
+		<!-- Formuilario -->
+		<div class="row">
+			<form action="/capturarDatosCondomino" method="post" class="col s12">
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">account_circle</i>
+						<input id="icon_prefix" name="nombre" value="" type="text" class="validate">
+						<label for="icon_prefix">Nombre</label>
+					</div>
+					<div class="input-field col s6">
+						<i class="material-icons prefix">account_circle</i>
+						<input id="icon_prefix" name="apellido" value="" type="text" class="validate">
+						<label for="icon_prefix">Apellido</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">phone</i>
+						<input id="icon_telephone" value="" name="telefono" type="tel" class="validate">
+						<label for="icon_telephone">Telefono</label>
+					</div>
+					<div class="input-field col s6">
+						<i class="material-icons prefix">phonelink_ring</i>
+						<input id="icon_telephone" value="" name="movil" type="tel" class="validate">
+						<label for="icon_telephone">Móvil</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s6">
+						<i class="material-icons prefix">assignment_ind</i>
+						<input id="icon_prefix" value="" name="departamento" type="text" class="validate">
+						<label for="icon_prefix">Departamento</label>
+					</div>
+				</div>
+				<!-- Text area -->
+				<div class="row">
+					<div class="input-field col s12">
+						<textarea id="textarea1" value="" name="comentarios" class="materialize-textarea"></textarea>
+						<label for="textarea1">Comentarios</label>
+					</div>
+				</div>
+				<!-- Boton -->
+				<div class="row">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+						<i class="mdi-content-send right"></i>
+					</button>
+				</div>
+			</form>
+		</div>
+		
+		<div class="row">
+			<ul class="col s8 offset-s1 collection" id="condominosUl">
+				<!--'<li class="collection-item avatar">'
+					'<i class="material-icons circle">person_pin</i>'
+					'<span class="title">-nombre- -apellido-</span>'
+					'<p>Telefono: -tel-'
+						'<br>'
+				   	'Movil: -movil- <br>'
+				   	'Departamento: -depto-'
+					'</p>'
+					'<a href="#!" class="secondary-content">'
+					'<i class="material-icons">grade</i></a>'
+				'</li>'-->
+			</ul>
+		</div>
+			
+		<script>
+			var condominos = _condominos_;
+			var condominosUl = document.getElementById('condominosUl');
+			var innerHtmlCondominos = "";
+			for(var i = 0; i < condominos.length; i++){
+			 	innerHtmlCondominos +=
+				 '<li class="collection-item avatar">' +
+				 	'<i class="material-icons circle red">person_pin</i>' +
+					'<span class="title"><h5>'+ condominos[i].nombre +' '+ condominos[i].apellido +'</h5></span>' +
+					'<p>' +
+						'<strong>Telefono:</strong> '+ condominos[i].telefono + ' <br>' +
+				   		'<strong>Movil:</strong> '+ condominos[i].movil +' <br>' +
+				   		'<strong>Departamento:</strong>' + condominos[i].departamento +
+					'</p>' +
+					'<a href="#!" class="secondary-content">' +
+					'<i class="material-icons">grade</i></a>' +
+				'</li>';
+			}
+		condominosUl.innerHTML = innerHtmlCondominos;
+		</script>
+		<!-- Jquery -->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<!-- Bootstrap -->
+		<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+	</script>-->
+		<!-- Materialize -->
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('input#input_text, textarea#textarea1').characterCounter();
+			});
+			(function($){
+				$(function(){
+					$('.button-collapse').sideNav();
+				}); // end of document ready
+			})(jQuery); // end of jQuery name space
+		</script>
+	</body>
+
+</html>
